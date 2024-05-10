@@ -1,0 +1,109 @@
+{
+  "basics": [
+    {
+      "id": 1,
+      "name": "Milton Rivas",
+      "label": "Desarrollador de software",
+      "email": "milton.rivas@uees.edu.ec",
+      "phone": "+593 993898467",
+      "summary": "Estudiante de programación dedicado al desarrollo de videojuegos y aplicaciones web.",
+      "location": {
+        "id":1,
+        "idBasic":1,
+        "address": "Km 5.5 via Daule Mapasingue",
+        "city": "Guayaquil",
+        "country": "Ecuador"
+      },
+      "profiles": [
+        {
+          "id": 1,
+          "idBasics": 1,
+          "network": "LinkedIn",
+          "username": "milton-rivas"
+        },
+        {
+          "id": 2,
+          "idBasics": 1,
+          "network": "GitHub",
+          "username": "milton-rivas-dev"
+        }
+      ]
+    }
+  ],
+  "work": [
+    {
+      "id": 1,
+      "name": "Empresa XYZ",
+      "location": "Ciudad de México, MX",
+      "description": "Empresa líder en desarrollo de software",
+      "position": "Desarrollador de software",
+      "startDate": "2023-01-01",
+      "endDate": null,
+      "highlights": [
+        "Desarrollo de aplicaciones web y móviles",
+        "Implementación de sistemas de gestión de inventario",
+        "Trabajo colaborativo en proyectos de software"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "id": 1,
+      "institution": "Universidad Espíritu Santo",
+      "url": "https://www.uees.edu.ec/",
+      "area": "Ingeniería en Sistemas",
+      "studyType": "Grado",
+      "startDate": "2018-09-01",
+      "endDate": "2022-07-15",
+      "score": 8.5,
+      "courses": [
+        "Programación orientada a objetos",
+        "Bases de datos",
+        "Arquitectura de software",
+        "Desarrollo web"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "id": 1,
+      "name": "Java",
+      "level": "Avanzado"
+    },
+    {
+      "id": 2,
+      "name": "Python",
+      "level": "Avanzado"
+    },
+    {
+      "id": 3,
+      "name": "JavaScript",
+      "level": "Avanzado"
+    },
+    {
+      "id": 4,
+      "name": "React",
+      "level": "Intermedio"
+    },
+    {
+      "id": 5,
+      "name": "Node.js",
+      "level": "Intermedio"
+    },
+    {
+      "id": 6,
+      "name": "SQL",
+      "level": "Intermedio"
+    },
+    {
+      "id": 7,
+      "name": "NoSQL",
+      "level": "Intermedio"
+    },
+    {
+      "id": 8,
+      "name": "Git",
+      "level": "Intermedio"
+    }
+  ]
+}

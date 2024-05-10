@@ -1,0 +1,211 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "API de Curriculum Vitae",
+    "version": "1.0.0",
+    "description": "API para Acceso al Curriculum Vitae"
+  },
+  "components": {
+    "schemas": {
+      "BasicDto": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string", "description": "Name of the person" },
+          "label": { "type": "string", "description": "Label of the person" },
+          "email": { "type": "string", "format": "email", "description": "Email address of the person" },
+          "phone": { "type": "string", "description": "Phone number of the person" },
+          "summary": { "type": "string", "description": "Summary of the person" },
+          "location": { "type": "string", "description": "Location of the person" },
+          "profiles": {
+            "type": "array",
+            "items": { "type": "string", "description": "Profiles of the person" }
+          }
+        }
+      },
+      "EducationDto": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "number", "description": "ID of the education" },
+          "institution": { "type": "string", "description": "Name of the institution" },
+          "url": { "type": "string", "description": "URL of the institution" },
+          "area": { "type": "string", "description": "Area of study" },
+          "studyType": { "type": "string", "description": "Type of study" },
+          "startDate": { "type": "string", "format": "date", "description": "Start date of the education" },
+          "endDate": { "type": "string", "format": "date", "description": "End date of the education" },
+          "score": { "type": "number", "description": "Score of the education" },
+          "courses": {
+            "type": "array",
+            "items": { "type": "string", "description": "Courses taken" }
+          }
+        }
+      },
+      "LocationDTo": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "description": "ID of the location" },
+          "idBasic": { "type": "string", "description": "Basic ID of the location" },
+          "address": { "type": "string", "description": "Address of the location" },
+          "city": { "type": "string", "description": "City of the location" },
+          "country": { "type": "string", "description": "Country of the location" }
+        }
+      },
+      "ProfileDto": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "description": "ID of the profile" },
+          "idBasics": { "type": "string", "description": "Basic ID of the profile" },
+          "network": { "type": "string", "description": "Network of the profile" },
+          "username": { "type": "string", "description": "Username of the profile" }
+        }
+      },
+      "SkillDto": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "description": "ID of the skill" },
+          "name": { "type": "string", "description": "Name of the skill" },
+          "level": { "type": "string", "description": "Level of the skill" }
+        }
+      },
+      "WorkDto": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "description": "ID of the work" },
+          "name": { "type": "string", "description": "Name of the work" },
+          "location": { "type": "string", "description": "Location of the work" },
+          "description": { "type": "string", "description": "Description of the work" },
+          "position": { "type": "string", "description": "Position of the work" },
+          "startDate": { "type": "string", "description": "Start date of the work" },
+          "endDate": { "type": "string", "description": "End date of the work" },
+          "highlights": { "type": "string", "description": "Highlights of the work" }
+        }
+      },
+      "BasicRequest": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string", "description": "Name of the basic" },
+          "label": { "type": "string", "description": "Label of the basic" },
+          "email": { "type": "string", "description": "Email of the basic" },
+          "phone": { "type": "string", "description": "Phone of the basic" },
+          "summary": { "type": "string", "description": "Summary of the basic" },
+          "location": { "$ref": "#/components/schemas/LocationRequest", "description": "Location of the basic" },
+          "profiles": { "type": "array", "items": { "$ref": "#/components/schemas/ProfileRequest" }, "description": "Profiles of the basic" }
+        }
+      },
+      "EducationRequest": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "description": "ID of the education" },
+          "institution": { "type": "string", "description": "Institution of the education" },
+          "url": { "type": "string", "description": "URL of the education" },
+          "area": { "type": "string", "description": "Area of the education" },
+          "studyType": { "type": "string", "description": "Study type of the education" },
+          "startDate": { "type": "string", "description": "Start date of the education" },
+          "endDate": { "type": "string", "description": "End date of the education" },
+          "score": { "type": "string", "description": "Score of the education" },
+          "courses": { "type": "string", "description": "Courses of the education" }
+        }
+      },
+      "LocationRequest": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "description": "ID of the location" },
+          "idBasic": { "type": "string", "description": "Basic ID of the location" },
+          "address": { "type": "string", "description": "Address of the location" },
+          "city": { "type": "string", "description": "City of the location" },
+          "country": { "type": "string", "description": "Country of the location" }
+        }
+      },
+      "ProfileRequest": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "description": "ID of the profile" },
+          "idBasics": { "type": "string", "description": "Basic ID of the profile" },
+          "network": { "type": "string", "description": "Network of the profile" },
+          "username": { "type": "string", "description": "Username of the profile" }
+        }
+      },
+      "SkillRequest": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "description": "ID of the skill" },
+          "name": { "type": "string", "description": "Name of the skill" },
+          "level": { "type": "string", "description": "Level of the skill" }
+        }
+      },
+      "WorkRequest": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "description": "ID of the work" },
+          "name": { "type": "string", "description": "Name of the work" },
+          "location": { "type": "string", "description": "Location of the work" },
+          "description": { "type": "string", "description": "Description of the work" },
+          "position": { "type": "string", "description": "Position of the work" },
+          "startDate": { "type": "string", "description": "Start date of the work" },
+          "endDate": { "type": "string", "description": "End date of the work" },
+          "highlights": { "type": "string", "description": "Highlights of the work" }
+        }
+      }
+    }
+  },
+  "tags": [
+    { "name": "Basics", "description": "Endpoints for basic information operations of a person" },
+    { "name": "education", "description": "Endpoints for basic education operations in a CV" },
+    { "name": "Trabajos", "description": "Endpoints for basic work operations, including CV work experience" }
+  ],
+  "paths": {
+    "/api/v1/Basics": {
+      "get": {
+        "summary": "Get all basic information of a person.",
+        "description": "Obtain all basic details from the CV.",
+        "tags": ["Basics"],
+        "responses": {
+          "200": {
+            "description": "Successful response. Obtain all basic details from the CV.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { "$ref": "#/components/schemas/BasicDto" }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Error in the request.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "summary": "Create new basic information of a person.",
+        "description": "Create new basic information of a person with provided information.",
+        "tags": ["Basics"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/BasicRequest" }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Basic information of the person created successfully."
+          },
+          "400": {
+            "description": "Error in the request."
+          }
+        }
+      }
+    }
+  }
+}
